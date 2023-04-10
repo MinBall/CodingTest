@@ -32,9 +32,7 @@ public class VideoPlay : MonoBehaviour
             WasherDoorClick.CheckNumber = 17;   //  17을 좀 늦게 올리고 비디오 실행 되면 다시 처음부터 시작하기 CheckNumber = 0
             if (ReNum == 0)
             {
-                MainCamera.SceneNumber = 2;        //  조건에 ScnenNumber 추가, 실행 Point Metarial, Arrow 다 지우기 
-                Invoke("ResetNumber",3);
-                ReNum++;
+                 Invoke("ResetNumber",3);    //  조건에 ScnenNumber 추가, 실행 Point Metarial, Arrow 다 지우기 
             }
         }                                            
         if (WasherDoorClick.CheckNumber == 17 && ReNum == 1)
@@ -62,7 +60,9 @@ public class VideoPlay : MonoBehaviour
     void ResetNumber()
     {
         WasherDoorClick.CheckNumber = 0;
-        Phone.SetActive(false);        
+        PhoneAimator.SetTrigger("Idle");
         LocalizedComponent.MainTextNumber = 1;
+        ReNum++;
+        MainCamera.SceneNumber = 2;
     }
 }

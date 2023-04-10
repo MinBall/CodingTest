@@ -11,8 +11,13 @@ public class WaterLevelButton : MonoBehaviour
     bool isOver = false;
     
 
-    private void Update()
+    void Update()
     {
+        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {
+            Debug.Log("으아아아아아아아아아아아아아아아아아");
+            Bucket.SetActive(false);
+        }
         //  물높이 버튼 누르면 물 높이 이미지 생성
         if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber == 12)
         {
@@ -21,6 +26,7 @@ public class WaterLevelButton : MonoBehaviour
             Bucket.SetActive(true);
             WasherDoorClick.CheckNumber = 13;
         }
+       
     }
 
     private void OnMouseOver()

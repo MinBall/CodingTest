@@ -30,33 +30,45 @@ public class SelectionMode : MonoBehaviour
         // 세탁기 패널 클릭하는 부분
         if (WasherDoorClick.CheckNumber == 7)
         {
-            CameraChangePanel.GetComponent<SpriteRenderer>().material = mat[0];
-            DialArrow[0].SetActive(true);
+            if (VideoPlay.ReNum == 0)
+            {
+                CameraChangePanel.GetComponent<SpriteRenderer>().material = mat[0];
+                DialArrow[0].SetActive(true);
+            }
             WasherDoorClick.CheckNumber++;  // 8
         }
         // 메인 패널 카메라 앞에 띄우고 다이얼 강조 부분
         if (WasherDoorClick.CheckNumber == 9)
         {
+            if (VideoPlay.ReNum == 0)
+            {
+                Dial.GetComponent<SpriteRenderer>().material = mat[0];
+                DialArrow[1].SetActive(true);
+            }
             Invoke("MainPanelOn", 1f);
-            Dial.GetComponent<SpriteRenderer>().material = mat[0];
-            DialArrow[1].SetActive(true);
             WasherDoorClick.CheckNumber++;  // 10            
         }
         // 물높이 버튼 강조 부분
         if(WasherDoorClick.CheckNumber == 11)
         {
-            LocalizedComponent.MainTextNumber++;    // 7
-            PanelButtons[0].GetComponent<SpriteRenderer>().material = mat[0];
-            DialArrow[2].SetActive(true);
+            if (VideoPlay.ReNum == 0)
+            {
+                PanelButtons[0].GetComponent<SpriteRenderer>().material = mat[0];
+                DialArrow[2].SetActive(true);
+            }
             WasherDoorClick.CheckNumber++;  //  12
+            LocalizedComponent.MainTextNumber++;    // 7
         }
         // 시작 버튼 누르는 부분
         if (WasherDoorClick.CheckNumber == 13)
         {
-            LocalizedComponent.MainTextNumber++;    // 8
-            PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[0];
-            DialArrow[3].SetActive(true);
+            if (VideoPlay.ReNum == 0)
+            {
+                PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[0];
+                DialArrow[3].SetActive(true);
+            }
             WasherDoorClick.CheckNumber++;  // 14
+            LocalizedComponent.MainTextNumber++;    // 8
         }
         // 카메라 화면 전환하는 부분
         if (WasherDoorClick.CheckNumber == 15)

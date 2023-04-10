@@ -25,6 +25,10 @@ public class PlayButtonclick : MonoBehaviour
             text.gameObject.SetActive(true);
             Invoke("Plus", 1.5f);
         }
+        if(VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {
+            text.gameObject.SetActive(false);
+        }
     }
 
     private void OnMouseOver()

@@ -19,15 +19,20 @@ public class Detergent : MonoBehaviour
     {
         if (WasherDoorClick.CheckNumber == 1)
         {
-            Invoke("Delay", 1.5f);
+            if (VideoPlay.ReNum == 0)
+                Invoke("Delay", 1.5f);
+
             WasherDoorClick.CheckNumber++;  // 2
         }
         if (WasherDoorClick.CheckNumber == 5)
-        {            
-            Detergent_Arrow.SetActive(true);
-            for(int i = 0; i < 6; i++)
+        {
+            if (VideoPlay.ReNum == 0)
             {
-                my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[0];                
+                Detergent_Arrow.SetActive(true);
+                for (int i = 0; i < 6; i++)
+                {
+                    my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[0];
+                }
             }
             WasherDoorClick.CheckNumber++; // 6
         }

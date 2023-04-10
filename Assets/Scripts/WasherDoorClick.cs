@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WasherDoorClick : MonoBehaviour
@@ -21,6 +22,10 @@ public class WasherDoorClick : MonoBehaviour
     }
     void Update()
     {
+        if (VideoPlay.ReNum == 1&&WasherDoorClick.CheckNumber ==0)
+        {
+            my_LaundryAnimator.SetTrigger("Idle");
+        }
         //  세탁기문 색 바꾸기
         if (MainCamera.SceneNumber ==1)
         {            
@@ -39,7 +44,9 @@ public class WasherDoorClick : MonoBehaviour
         {
             my_WasherDoor.GetComponent<BoxCollider>().enabled = false;
             my_WasherDoor.GetComponent<MeshRenderer>().material = mat[1];
-            my_DoorAnimator.SetBool("DoorOpen",true);
+
+                my_DoorAnimator.SetBool("DoorOpen", true);
+        
             Invoke("LaundryAnimation", 0.4f);
             Invoke("CloseDoor", 1);
             DelayPlus();

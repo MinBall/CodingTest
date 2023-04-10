@@ -12,7 +12,6 @@ public class MainCamera : MonoBehaviour
     public static int SceneNumber = 0;
     public GameObject my_Arrow;
     public GameObject my_WasherDoor;
-    public Animator my_ArrowAnimator;
     public static Action FChange;
     public static Action Change;
     public static Action Change1;
@@ -74,6 +73,6 @@ public class MainCamera : MonoBehaviour
     {
         Change = () => { SecondScene(1); };
         Change1 = () => { ThirdScene(2); };
-        FChange = () => { MoveCamera(0); };
+        FChange = () => { MoveCamera(3); };
     }
 }

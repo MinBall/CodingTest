@@ -21,7 +21,9 @@ public class DetergentClick : MonoBehaviour
         // SceneNumber !== 2;
         if (WasherDoorClick.CheckNumber == 3)
         {
-            Invoke("DeterStart", 1.5f);
+            if(VideoPlay.ReNum == 0)
+                Invoke("DeterStart", 1.5f);
+
             WasherDoorClick.CheckNumber++;  // 4 
         }
     }
