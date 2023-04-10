@@ -30,14 +30,17 @@ public class MainCamera : MonoBehaviour
                 FirstScene();
                 LocalizedComponent.MainTextNumber++;    // 2               
             }
-            SceneNumber++;
+            else if (SceneNumber == 2 && WasherDoorClick.CheckNumber == 0)
+            {
+                FirstScene();
+                my_WasherDoor.GetComponent<BoxCollider>().enabled = true;
+                Debug.Log("퀴즈모드시작");
+                LocalizedComponent.MainTextNumber++;
+            }
+            SceneNumber++;           
         }
-        if (SceneNumber == 2 && WasherDoorClick.CheckNumber == 0)
-        {
-            FirstScene();
-            my_WasherDoor.GetComponent<BoxCollider>().enabled = true;
-            Debug.Log("퀴즈모드");
-        }
+       
+
     }
 
     // 카메라를 목표 지점으로 이동

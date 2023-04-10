@@ -10,7 +10,7 @@ public class VideoPlay : MonoBehaviour
     public GameObject Phone;
     public VideoPlayer video;
     public Animator PhoneAimator;
-    private int ReNum = 0;
+    public static int ReNum = 0;
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
     private static extern void ShowMessage(string message);
@@ -62,7 +62,7 @@ public class VideoPlay : MonoBehaviour
     void ResetNumber()
     {
         WasherDoorClick.CheckNumber = 0;
-        Phone.SetActive(false);
-        MainCamera.FChange();
+        Phone.SetActive(false);        
+        LocalizedComponent.MainTextNumber = 1;
     }
 }

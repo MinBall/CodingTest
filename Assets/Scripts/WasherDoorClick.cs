@@ -25,7 +25,7 @@ public class WasherDoorClick : MonoBehaviour
         if (MainCamera.SceneNumber ==1)
         {            
             my_WasherDoor.GetComponent<MeshRenderer>().material = mat[0];
-            my_WasherDoor.GetComponent<BoxCollider>().enabled = true;            
+            my_WasherDoor.GetComponent<BoxCollider>().enabled = true;         
         }
     }
 
@@ -46,7 +46,7 @@ public class WasherDoorClick : MonoBehaviour
         }   
 
         my_Arrow.SetActive(false);
-        CheckNumber++;  // 1        
+        CheckNumber++;  // 1
     }
 
     void LaundryAnimation()
