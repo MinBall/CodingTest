@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 
 public class PlayButtonclick : MonoBehaviour
@@ -11,8 +12,12 @@ public class PlayButtonclick : MonoBehaviour
     public Text text;
     public Material[] mat = new Material[2];
     bool isOver = false;
+    public static Action PalyBtReset;
 
-
+    private void Awake()
+    {
+        PalyBtReset = () => { PBReset(); };
+    }
     private void Update()
     {
         //  세탁 시작 버튼
@@ -24,13 +29,17 @@ public class PlayButtonclick : MonoBehaviour
             PlayButtonArrow.SetActive(false);
             text.gameObject.SetActive(true);
             Invoke("Plus", 1.5f);
-        }
-        if(VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        }       
+    }
+
+    void PBReset()
+    {
+        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
         {
+            Debug.Log("플레이버튼 리셋입니다.");
             text.gameObject.SetActive(false);
         }
     }
-
     private void OnMouseOver()
     {
         isOver = true;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WaterLevelButton : MonoBehaviour
 {
@@ -9,15 +10,14 @@ public class WaterLevelButton : MonoBehaviour
     public GameObject Bucket;
     public Material[] mat = new Material[2];
     bool isOver = false;
-    
+    public static Action WaterReset;
 
-    void Update()
+    private void Awake()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
-        {
-            Debug.Log("으아아아아아아아아아아아아아아아아아");
-            Bucket.SetActive(false);
-        }
+        WaterReset = () => { WRest(); };
+    }
+    void Update()
+    {      
         //  물높이 버튼 누르면 물 높이 이미지 생성
         if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber == 12)
         {
@@ -26,7 +26,11 @@ public class WaterLevelButton : MonoBehaviour
             Bucket.SetActive(true);
             WasherDoorClick.CheckNumber = 13;
         }
-       
+        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {
+            print("여기는 물 높이 리셋 부분입니다.");
+            Bucket.SetActive(false);
+        }
     }
 
     private void OnMouseOver()
@@ -37,5 +41,14 @@ public class WaterLevelButton : MonoBehaviour
     private void OnMouseExit()
     {
         isOver = false;
+    }
+
+   public void WRest()
+    {
+        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {
+            print("여기는 물 높이 리셋 부분입니다.");
+            Bucket.SetActive(false);
+        }
     }
 }

@@ -67,14 +67,15 @@ public class SelectionMode : MonoBehaviour
                 PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[3].SetActive(true);
             }
-            WasherDoorClick.CheckNumber++;  // 14
-            LocalizedComponent.MainTextNumber++;    // 8
+            WasherDoorClick.CheckNumber = 14;  // 14
+            LocalizedComponent.MainTextNumber = 8;    // 8
         }
         // 카메라 화면 전환하는 부분
         if (WasherDoorClick.CheckNumber == 15)
         {
             LocalizedComponent.MainTextNumber = 10;    // 10
             PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[2];
+            DialClick.DialReset();
             MainCamera.FChange();
             MainPanelOff();
             WasherDoorClick.CheckNumber =16;

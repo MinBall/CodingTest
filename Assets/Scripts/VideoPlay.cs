@@ -62,7 +62,7 @@ public class VideoPlay : MonoBehaviour
         WasherDoorClick.CheckNumber = 0;
         PhoneAimator.SetTrigger("Idle");
         LocalizedComponent.MainTextNumber = 1;
-        ReNum++;
+        ReNum=1;
         MainCamera.SceneNumber = 2;
     }
 }

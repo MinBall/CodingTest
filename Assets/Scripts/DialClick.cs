@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DialClick : MonoBehaviour
 {
@@ -9,14 +10,14 @@ public class DialClick : MonoBehaviour
     public Material[] mat = new Material[2];
     bool isOver = false;
     public Animator DialAimator;
+    public static Action DialReset;
 
-    private void Update()
+    private void Awake()
     {
-        if (VideoPlay.ReNum == 1&&WasherDoorClick.CheckNumber == 0)
-        {
-            Debug.Log("에에에에에에에엥에에에에에에에에에에에");
-            DialAimator.SetTrigger("Dial");
-        }
+        DialReset = () => { DReset(); };
+    }
+    private void Update()
+    {       
         //  다이얼 클릭시 애니메이션, 다음 효과로 넘어감
         if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber==10)
         {
@@ -29,6 +30,14 @@ public class DialClick : MonoBehaviour
         
     }
 
+    void DReset()
+    {
+        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {
+            Debug.Log("다이얼 초기화 부분입니다.");
+            DialAimator.SetTrigger("Idle");
+        }
+    }
     private void OnMouseOver()
     {
         isOver = true;
