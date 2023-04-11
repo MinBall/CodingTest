@@ -19,7 +19,7 @@ public class DialClick : MonoBehaviour
     private void Update()
     {       
         //  다이얼 클릭시 애니메이션, 다음 효과로 넘어감
-        if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber==10)
+        if (isOver && Input.GetMouseButtonDown(0) && WasherDoorClick.CheckNumber==10)
         {
             MainCamera.Change1();
             Dial.GetComponent<SpriteRenderer>().material = mat[1];

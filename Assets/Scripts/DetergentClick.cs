@@ -24,7 +24,7 @@ public class DetergentClick : MonoBehaviour
             if(VideoPlay.ReNum == 0)
                 Invoke("DeterStart", 1.5f);
 
-            WasherDoorClick.CheckNumber++;  // 4 
+            WasherDoorClick.CheckNumber=4;  // 4 
         }
     }
 
@@ -65,7 +65,7 @@ public class DetergentClick : MonoBehaviour
 
     void Plus()
     {
-        WasherDoorClick.CheckNumber++;  // 5
+        WasherDoorClick.CheckNumber=5;  // 5
         LocalizedComponent.MainTextNumber++;    // 6
     }
 }

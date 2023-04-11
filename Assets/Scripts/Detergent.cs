@@ -53,7 +53,7 @@ public class Detergent : MonoBehaviour
                 MainCamera.Change();
                 my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
-                WasherDoorClick.CheckNumber++;   // 3
+                WasherDoorClick.CheckNumber=3;   // 3
                 WasherDoorClick.DPlus();    //4
             }
             // ¼¼Á¦Åë ´ÝÈû
@@ -65,7 +65,7 @@ public class Detergent : MonoBehaviour
                 {
                     my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[1];                    
                 }
-                WasherDoorClick.CheckNumber++;  // 7
+                WasherDoorClick.CheckNumber=7;  // 7
                 LocalizedComponent.MainTextNumber++;    // 6
 
             }
