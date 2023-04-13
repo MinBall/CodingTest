@@ -27,7 +27,6 @@ public class WaterLevelButton : MonoBehaviour
                 WaterArrow.SetActive(false);
                 Bucket.SetActive(true);
                 WasherDoorClick.CheckNumber = 13;
-                Debug.Log(WasherDoorClick.CheckNumber + "물높이 버튼 누른 후");
             }
         }
     }
@@ -45,8 +44,7 @@ public class WaterLevelButton : MonoBehaviour
    public void WRest()
     {
         if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
-        {
-            print("여기는 물 높이 리셋 부분입니다.");
+        {            
             Bucket.SetActive(false);
         }
     }

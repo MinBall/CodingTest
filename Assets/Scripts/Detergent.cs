@@ -8,19 +8,27 @@ public class Detergent : MonoBehaviour
     public Animator my_DetergentInAnimator;
     public GameObject[] my_DetergentIn;
     public GameObject Detergent_Arrow;
+    GameObject DetergentIn;
 
     void Start()
     {
+        DetergentIn = GameObject.Find("Detergent-Insert");
         Detergent_Arrow.SetActive(false);
+        DetergentIn.GetComponent<BoxCollider>().enabled = false;
     }
 
 
     void Update()
     {
+        if(WasherDoorClick.CheckNumber == 0)
+            DetergentIn.GetComponent<BoxCollider>().enabled = false;
+
         if (WasherDoorClick.CheckNumber == 1)
         {
             if (VideoPlay.ReNum == 0)
                 Invoke("Delay", 1.5f);
+            else
+                Invoke("DGColliderOn",1.5f);
 
             WasherDoorClick.CheckNumber++;  // 2
         }
@@ -40,8 +48,7 @@ public class Detergent : MonoBehaviour
 
     // 세재통 눌렀을 때 열고 닫히는 부분
     private void OnMouseDown()
-    {
-        
+    {        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
          if (Physics.Raycast(ray, out hit))
@@ -72,10 +79,16 @@ public class Detergent : MonoBehaviour
          }
     }
 
+    void DGColliderOn()
+    {
+        DetergentIn.GetComponent<BoxCollider>().enabled = true;
+    }
+
     void Delay()
     {
         Detergent_Arrow.SetActive(true);
         my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[0];
+        DGColliderOn();
     }
 
     public void DetOpen()

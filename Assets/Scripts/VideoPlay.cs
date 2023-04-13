@@ -64,6 +64,7 @@ public class VideoPlay : MonoBehaviour
         LocalizedComponent.MainTextNumber = 1;
         ReNum++;
         MainCamera.SceneNumber = 2;
+        
     }
 
     void VideoPlayer()

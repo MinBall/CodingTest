@@ -37,9 +37,7 @@ public class MainCamera : MonoBehaviour
                 LocalizedComponent.MainTextNumber++;
             }
             SceneNumber++;           
-        }
-       
-
+        }       
     }
 
     // 카메라를 목표 지점으로 이동
