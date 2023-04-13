@@ -23,7 +23,6 @@ public class WaterLevelButton : MonoBehaviour
         {
             if (WasherDoorClick.CheckNumber == 12)
             {
-                Debug.Log(WasherDoorClick.CheckNumber + "물높이 버튼");
                 WaterButton.GetComponent<SpriteRenderer>().material = mat[0];
                 WaterArrow.SetActive(false);
                 Bucket.SetActive(true);

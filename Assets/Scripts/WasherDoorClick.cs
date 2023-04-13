@@ -27,7 +27,7 @@ public class WasherDoorClick : MonoBehaviour
             my_LaundryAnimator.SetTrigger("Idle");
             //DialClick.DialReset();
             PlayButtonclick.PalyBtReset();
-            WaterLevelButton.WaterReset();                      
+            WaterLevelButton.WaterReset();
         }
         //  세탁기문 색 바꾸기
         if (MainCamera.SceneNumber ==1)

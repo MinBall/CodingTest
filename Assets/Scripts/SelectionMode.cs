@@ -27,7 +27,7 @@ public class SelectionMode : MonoBehaviour
 
     void Update()
     {
-        // 세탁기 패널 클릭하는 부분
+        // 세탁기 패널 클릭 강조 부분
         if (WasherDoorClick.CheckNumber == 7)
         {
             if (VideoPlay.ReNum == 0)
@@ -59,7 +59,7 @@ public class SelectionMode : MonoBehaviour
             WasherDoorClick.CheckNumber = 12;  //  12
             LocalizedComponent.MainTextNumber++;    // 7
         }
-        // 시작 버튼 누르는 부분
+        // 시작 버튼 강조 부분
         if (WasherDoorClick.CheckNumber == 13)
         {
             if (VideoPlay.ReNum == 0)
@@ -67,7 +67,7 @@ public class SelectionMode : MonoBehaviour
                 PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[3].SetActive(true);
             }
-            WasherDoorClick.CheckNumber++;  // 14
+            WasherDoorClick.CheckNumber = 14;  // 14
             LocalizedComponent.MainTextNumber = 8;    // 8
         }
         // 카메라 화면 전환하는 부분
@@ -76,7 +76,7 @@ public class SelectionMode : MonoBehaviour
             LocalizedComponent.MainTextNumber = 10;    // 10
             PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[2];
             //DialClick.DialReset();
-            MainCamera.FChange();
+            MainCamera.FChange();   // 메인카메라로 이동
             MainPanelOff();
             WasherDoorClick.CheckNumber =16;
         }

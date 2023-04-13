@@ -12,7 +12,7 @@ public class CameraChangePanelClick : MonoBehaviour
     private void Update()
     {
         //  패널 클릭시 화면 전환, 패널 확대
-        if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber == 8)
+        if ((isOver && Input.GetMouseButton(0)) && WasherDoorClick.CheckNumber == 8)
         {
             MainCamera.Change1();
             CameraChangePanel.GetComponent<SpriteRenderer>().material = mat[1];

@@ -12,7 +12,7 @@ public class PlayButtonclick : MonoBehaviour
     public GameObject PlayButtonArrow;
     public TextMeshProUGUI text;
     public Material[] mat = new Material[2];
-    bool isOver = false;
+   //bool isOver = false;
     public static Action PalyBtReset;
 
     private void Awake()
@@ -23,7 +23,7 @@ public class PlayButtonclick : MonoBehaviour
     private void Update()
     {
         //  세탁 시작 버튼
-        if (isOver && Input.GetMouseButtonDown(0))  // 버그 생기는 부분 학습 모드에서는 안 생기는데 퀴즈 모드에서는 아무대나 클릭하면 작동된다. 왜????
+        /*if (isOver && Input.GetMouseButtonDown(0))  // 버그 생기는 부분 학습 모드에서는 안 생기는데 퀴즈 모드에서는 아무대나 클릭하면 작동된다. 왜????
         {
             //PlayButton.GetComponent<BoxCollider>().enabled = true;
             if (WasherDoorClick.CheckNumber == 14)
@@ -35,7 +35,26 @@ public class PlayButtonclick : MonoBehaviour
                 text.gameObject.SetActive(true);
                 Invoke("Plus", 1.5f);
             }
-        }       
+        }       */
+    }
+
+    private void OnMouseDown()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (WasherDoorClick.CheckNumber == 14)
+            {
+                Debug.Log(WasherDoorClick.CheckNumber + "시작 버튼");
+                LocalizedComponent.MainTextNumber = 9;    // 9           
+                PlayButton.GetComponent<SpriteRenderer>().material = mat[0];
+                PlayButtonArrow.SetActive(false);
+                text.gameObject.SetActive(true);
+                Invoke("Plus", 1.5f);
+            }
+        }
     }
 
     void PBReset()
@@ -46,7 +65,7 @@ public class PlayButtonclick : MonoBehaviour
             text.gameObject.SetActive(false);
         }
     }
-    private void OnMouseOver()
+   /* private void OnMouseOver()
     {
         isOver = true;
     }
@@ -54,7 +73,7 @@ public class PlayButtonclick : MonoBehaviour
     private void OnMouseExit()
     {
         isOver = false;
-    }
+    }*/
 
     void Plus()
     {
