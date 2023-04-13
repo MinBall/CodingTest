@@ -29,7 +29,7 @@ public class MainCamera : MonoBehaviour
                 FirstScene();
                 LocalizedComponent.MainTextNumber++;    // 2               
             }
-            else if (SceneNumber == 2 && WasherDoorClick.CheckNumber == 0)
+            else if ((SceneNumber == 2 && WasherDoorClick.CheckNumber == 0) && VideoPlay.ReNum ==1)
             {
                 FirstScene();
                 my_WasherDoor.GetComponent<BoxCollider>().enabled = true;

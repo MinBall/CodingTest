@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LocalizedTextComponent : LocalizedComponent
 {
      protected TextMeshProUGUI textComponent;
+      
   
     protected override void Start()
     {
@@ -18,13 +19,14 @@ public class LocalizedTextComponent : LocalizedComponent
     private void Update()
     {
         localizedCode = "MainText" + MainTextNumber.ToString("D3");
+      
         //Debug.Log(localizedCode);
         UpdateContent();
     }
 
     protected override void UpdateContent()
     {
-        textComponent.text = LocalizationManager.Instance.GetStringFromCode(localizedCode, textComponent.text);
+        textComponent.text = LocalizationManager.Instance.GetStringFromCode(localizedCode, textComponent.text);       
     }
 
 }

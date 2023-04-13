@@ -34,7 +34,7 @@ public class Detergent : MonoBehaviour
                     my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[0];
                 }
             }
-            WasherDoorClick.CheckNumber++; // 6
+            WasherDoorClick.CheckNumber = 6; // 6
         }
     }
 
@@ -53,8 +53,8 @@ public class Detergent : MonoBehaviour
                 MainCamera.Change();
                 my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
-                WasherDoorClick.CheckNumber++;   // 3
-                WasherDoorClick.DPlus();    //4
+                WasherDoorClick.CheckNumber=3;   // 3
+                WasherDoorClick.DPlus();    //LocalizedComponent.MainTextNumber = 4
             }
             // ¼¼Á¦Åë ´ÝÈû
             if (WasherDoorClick.CheckNumber == 6)
@@ -65,13 +65,11 @@ public class Detergent : MonoBehaviour
                 {
                     my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[1];                    
                 }
-                WasherDoorClick.CheckNumber++;  // 7
-                LocalizedComponent.MainTextNumber++;    // 6
+                WasherDoorClick.CheckNumber=7;  // 7
+                LocalizedComponent.MainTextNumber = 6;    // 7
 
             }
          }
-       
-
     }
 
     void Delay()

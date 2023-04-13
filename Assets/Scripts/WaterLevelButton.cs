@@ -19,17 +19,16 @@ public class WaterLevelButton : MonoBehaviour
     void Update()
     {      
         //  물높이 버튼 누르면 물 높이 이미지 생성
-        if (isOver && Input.GetMouseButton(0) && WasherDoorClick.CheckNumber == 12)
+        if (isOver && Input.GetMouseButtonDown(0))
         {
-            WaterButton.GetComponent<SpriteRenderer>().material = mat[0];
-            WaterArrow.SetActive(false);
-            Bucket.SetActive(true);
-            WasherDoorClick.CheckNumber = 13;
-        }
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
-        {
-            print("여기는 물 높이 리셋 부분입니다.");
-            Bucket.SetActive(false);
+            if (WasherDoorClick.CheckNumber == 12)
+            {
+                WaterButton.GetComponent<SpriteRenderer>().material = mat[0];
+                WaterArrow.SetActive(false);
+                Bucket.SetActive(true);
+                WasherDoorClick.CheckNumber = 13;
+                Debug.Log(WasherDoorClick.CheckNumber + "물높이 버튼 누른 후");
+            }
         }
     }
 
