@@ -76,7 +76,7 @@ public class SelectionMode : MonoBehaviour
             LocalizedComponent.MainTextNumber = 10;    // 10
             PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[2];
             //DialClick.DialReset();
-            MainCamera.FChange();   // 메인카메라로 이동
+            MainCamera.Change(MainCamera.CameraSceneChangeNumber = 3);   // 메인카메라로 이동
             MainPanelOff();
             WasherDoorClick.CheckNumber =16;
         }

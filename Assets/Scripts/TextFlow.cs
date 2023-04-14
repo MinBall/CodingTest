@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class TextMeshPro : LocalizedTextComponent
+public class TexTFlow : LocalizedTextComponent
 {
     /*public TextMeshProUGUI StautText;
     void Start()

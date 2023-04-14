@@ -57,7 +57,7 @@ public class Detergent : MonoBehaviour
             if (WasherDoorClick.CheckNumber == 2)
             {
                 Detergent_Arrow.SetActive(false);
-                MainCamera.Change();
+                MainCamera.Change(MainCamera.CameraSceneChangeNumber = 1);
                 my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
                 WasherDoorClick.CheckNumber=3;   // 3

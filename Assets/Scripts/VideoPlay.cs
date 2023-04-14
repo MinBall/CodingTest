@@ -55,10 +55,12 @@ public class VideoPlay : MonoBehaviour
     {      
         yield return new WaitForSeconds(3);
         MessageToJS();
+        video.Pause();
     }
 
     void ResetNumber()
     {
+        video.Stop();
         WasherDoorClick.CheckNumber = 0;
         PhoneAimator.SetTrigger("Idle");
         LocalizedComponent.MainTextNumber = 1;
