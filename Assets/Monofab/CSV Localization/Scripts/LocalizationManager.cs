@@ -93,7 +93,6 @@ public class LocalizationManager : MonoBehaviour
     public void SwitchCurrentLocalizationData()
     {
         //languageIndex = (languageIndex + 1) % languages.Length;
-        //TMPro.TMP_Dropdown options = DropdownTest.options;
         languageIndex = LocalizationDropdown.options.value;
         currentLanguage = languages[languageIndex];
         onLanguageChanged.Invoke();        

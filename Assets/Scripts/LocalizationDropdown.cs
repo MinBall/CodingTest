@@ -45,7 +45,7 @@ public class LocalizationDropdown : MonoBehaviour
         LocalizationManager.DropdownPlay();
 
         // option 관련 동작
-        Debug.Log("current option : " + options.value);
+        //Debug.Log("current option : " + options.value);
     }
 }
 

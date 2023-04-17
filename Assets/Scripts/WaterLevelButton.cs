@@ -14,7 +14,7 @@ public class WaterLevelButton : MonoBehaviour
 
     private void Awake()
     {
-        WaterReset = () => { WRest(); };
+        WaterReset = () => { WReset(); };
     }
     void Update()
     {      
@@ -41,9 +41,9 @@ public class WaterLevelButton : MonoBehaviour
         isOver = false;
     }
 
-   public void WRest()
+   public void WReset()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        if (VideoPlayManager.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
         {            
             Bucket.SetActive(false);
         }

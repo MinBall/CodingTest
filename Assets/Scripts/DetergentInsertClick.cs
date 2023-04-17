@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Detergent : MonoBehaviour
+public class DetergentInsertClick : MonoBehaviour
 {
     public Material[] mat = new Material[2];
-    public Animator my_DetergentInAnimator;
-    public GameObject[] my_DetergentIn;
-    public GameObject Detergent_Arrow;
-    GameObject DetergentIn;
+    public Animator Detergent_Insert_Animator;
+    public GameObject[] Detergent_Insertparts;
+    public GameObject Detergent_Insert_Arrow;
+    GameObject Detergent_Insert;
 
     void Start()
     {
-        DetergentIn = GameObject.Find("Detergent-Insert");
-        Detergent_Arrow.SetActive(false);
-        DetergentIn.GetComponent<BoxCollider>().enabled = false;
+        Detergent_Insert = GameObject.Find("Detergent-Insert");
+        Detergent_Insert_Arrow.SetActive(false);
+        Detergent_Insert.GetComponent<BoxCollider>().enabled = false;
     }
 
 
     void Update()
     {
         if(WasherDoorClick.CheckNumber == 0)
-            DetergentIn.GetComponent<BoxCollider>().enabled = false;
+            Detergent_Insert.GetComponent<BoxCollider>().enabled = false;
 
         if (WasherDoorClick.CheckNumber == 1)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
                 Invoke("Delay", 1.5f);
             else
                 Invoke("DGColliderOn",1.5f);
@@ -34,12 +34,12 @@ public class Detergent : MonoBehaviour
         }
         if (WasherDoorClick.CheckNumber == 5)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
             {
-                Detergent_Arrow.SetActive(true);
+                Detergent_Insert_Arrow.SetActive(true);
                 for (int i = 0; i < 6; i++)
                 {
-                    my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[0];
+                    Detergent_Insertparts[i].GetComponent<MeshRenderer>().material = mat[0];
                 }
             }
             WasherDoorClick.CheckNumber = 6; // 6
@@ -56,21 +56,21 @@ public class Detergent : MonoBehaviour
             //  技力烹 凯覆
             if (WasherDoorClick.CheckNumber == 2)
             {
-                Detergent_Arrow.SetActive(false);
-                MainCamera.Change(MainCamera.CameraSceneChangeNumber = 1);
-                my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[1];
+                Detergent_Insert_Arrow.SetActive(false);
+                CameraMoveComponent.ChangeCamera(CameraMoveComponent.CameraSceneChangeNumber = 1);
+                Detergent_Insertparts[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
                 WasherDoorClick.CheckNumber=3;   // 3
-                WasherDoorClick.DPlus();    //LocalizedComponent.MainTextNumber = 4
+                WasherDoorClick.delayPlus();    //LocalizedComponent.MainTextNumber = 4
             }
             // 技力烹 摧塞
             if (WasherDoorClick.CheckNumber == 6)
             {
-                my_DetergentInAnimator.SetTrigger("DetergentClose");
-                Detergent_Arrow.SetActive(false);
+                Detergent_Insert_Animator.SetTrigger("DetergentClose");
+                Detergent_Insert_Arrow.SetActive(false);
                 for (int i = 0; i < 6; i++)
                 {
-                    my_DetergentIn[i].GetComponent<MeshRenderer>().material = mat[1];                    
+                    Detergent_Insertparts[i].GetComponent<MeshRenderer>().material = mat[1];                    
                 }
                 WasherDoorClick.CheckNumber=7;  // 7
                 LocalizedComponent.MainTextNumber = 6;    // 7
@@ -81,19 +81,19 @@ public class Detergent : MonoBehaviour
 
     void DGColliderOn()
     {
-        DetergentIn.GetComponent<BoxCollider>().enabled = true;
+        Detergent_Insert.GetComponent<BoxCollider>().enabled = true;
     }
 
     void Delay()
     {
-        Detergent_Arrow.SetActive(true);
-        my_DetergentIn[0].GetComponent<MeshRenderer>().material = mat[0];
+        Detergent_Insert_Arrow.SetActive(true);
+        Detergent_Insertparts[0].GetComponent<MeshRenderer>().material = mat[0];
         DGColliderOn();
     }
 
     public void DetOpen()
     {
-        my_DetergentInAnimator.SetTrigger("DetergentOpen");
+        Detergent_Insert_Animator.SetTrigger("DetergentOpen");
     }
 
     void Plus()

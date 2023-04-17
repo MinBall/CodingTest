@@ -32,7 +32,7 @@ public class DialClick : MonoBehaviour
 
     void DReset()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        if (VideoPlayManager.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
         {
             DialAimator.SetTrigger("Idle");
         }

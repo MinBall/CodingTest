@@ -12,11 +12,11 @@ public class PlayButtonclick : MonoBehaviour
     public GameObject PlayButtonArrow;
     public TextMeshProUGUI text;
     public Material[] mat = new Material[2];
-    public static Action PalyBtReset;
+    public static Action PlayBtReset;
 
     private void Awake()
     {
-        PalyBtReset = () => { PBReset(); };
+        PlayBtReset = () => { PBReset(); };
     }
     private void Update()
     {
@@ -56,7 +56,7 @@ public class PlayButtonclick : MonoBehaviour
 
     void PBReset()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        if (VideoPlayManager.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
         {
             text.gameObject.SetActive(false);
         }
