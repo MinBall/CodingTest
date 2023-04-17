@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DropdownTest : MonoBehaviour
+public class LocalizationDropdown : MonoBehaviour
 {
     string DROPDOWN_KEY = "DROPDOWN_KEY";
 
