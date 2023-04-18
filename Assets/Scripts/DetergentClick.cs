@@ -5,15 +5,15 @@ using UnityEngine;
 public class DetergentClick : MonoBehaviour
 {
     public GameObject[] Detergent;
-    public GameObject ClickArrow;
-    public Animator my_DetInputAnimator;
+    public GameObject Detergent_Arrow;
+    public Animator Detergent_Animator;
     public Material[] mat = new Material[3];
-    public ParticleSystem[] particleObject;
+    public ParticleSystem[] Detergent_Particle;
 
 
     void Start()
     {
-        ClickArrow.SetActive(false);
+        Detergent_Arrow.SetActive(false);
         Detergent[0].GetComponent<BoxCollider>().enabled = false;
     }
 
@@ -22,7 +22,7 @@ public class DetergentClick : MonoBehaviour
         // SceneNumber !== 2;
         if (WasherDoorClick.CheckNumber == 3)
         {
-            if(VideoPlay.ReNum == 0)
+            if(VideoPlayManager.ReNum == 0)
                 Invoke("DeterStart", 1.5f);
 
             Detergent[0].GetComponent<BoxCollider>().enabled = true;
@@ -34,7 +34,7 @@ public class DetergentClick : MonoBehaviour
     //  세제,섬유유연제 클릭시 파티클 효과와 애니메이션 실행
     private void OnMouseDown()
     {
-        ClickArrow.SetActive(false);
+        Detergent_Arrow.SetActive(false);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -45,7 +45,7 @@ public class DetergentClick : MonoBehaviour
                 
                 Detergent[0].GetComponent<MeshRenderer>().material = mat[1];
                 Detergent[1].GetComponent<MeshRenderer>().material = mat[2];
-                my_DetInputAnimator.SetTrigger("Detlnput");
+                Detergent_Animator.SetTrigger("Detlnput");
                 Invoke("ParticlePlay", 1.3f);
                 Invoke("Plus", 4);                
             }
@@ -56,7 +56,7 @@ public class DetergentClick : MonoBehaviour
     //  세제와 섬유유연제 강조 부분
     void DeterStart()
     {
-        ClickArrow.SetActive(true);
+        Detergent_Arrow.SetActive(true);
         Detergent[0].GetComponent<MeshRenderer>().material = mat[0];
         Detergent[1].GetComponent<MeshRenderer>().material = mat[0];
     }
@@ -64,8 +64,8 @@ public class DetergentClick : MonoBehaviour
     //  파티클 재생부분
     void ParticlePlay()
     {
-        particleObject[0].Play();
-        particleObject[1].Play();
+        Detergent_Particle[0].Play();
+        Detergent_Particle[1].Play();
     }
 
     void Plus()

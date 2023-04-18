@@ -14,7 +14,7 @@ public class WaterLevelButton : MonoBehaviour
 
     private void Awake()
     {
-        WaterReset = () => { WRest(); };
+        WaterReset = () => { WReset(); };
     }
     void Update()
     {      
@@ -27,7 +27,6 @@ public class WaterLevelButton : MonoBehaviour
                 WaterArrow.SetActive(false);
                 Bucket.SetActive(true);
                 WasherDoorClick.CheckNumber = 13;
-                Debug.Log(WasherDoorClick.CheckNumber + "물높이 버튼 누른 후");
             }
         }
     }
@@ -42,11 +41,10 @@ public class WaterLevelButton : MonoBehaviour
         isOver = false;
     }
 
-   public void WRest()
+   public void WReset()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
-        {
-            print("여기는 물 높이 리셋 부분입니다.");
+        if (VideoPlayManager.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        {            
             Bucket.SetActive(false);
         }
     }

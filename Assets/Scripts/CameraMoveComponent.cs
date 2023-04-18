@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.AI;
 
-
-public class MainCamera : MonoBehaviour
+public class CameraMoveComponent : MonoBehaviour
 {
     public Canvas my_canva;
     public Camera[] SubCamera;
     public static int SceneNumber = 0;
-    public GameObject my_Arrow;
-    public GameObject my_WasherDoor;
-    public static Action FChange;
-    public static Action Change;
-    public static Action Change1;
-
-    void Start()
+    public GameObject WasherDoorArrow;
+    public GameObject WasherDoor;
+    public static Action<int> ChangeCamera;
+    public static int CameraSceneChangeNumber = 0;
+    private void Awake()
     {
-       my_Arrow.SetActive(false);
+        ChangeCamera = (int CameraSceneChangeNumber) => { MoveCameraSup(CameraSceneChangeNumber); };
+        WasherDoorArrow.SetActive(false);
     }
     void Update()
     {
@@ -29,17 +28,15 @@ public class MainCamera : MonoBehaviour
                 FirstScene();
                 LocalizedComponent.MainTextNumber++;    // 2               
             }
-            else if ((SceneNumber == 2 && WasherDoorClick.CheckNumber == 0) && VideoPlay.ReNum ==1)
+            else if ((SceneNumber == 2 && WasherDoorClick.CheckNumber == 0) && VideoPlayManager.ReNum ==1)
             {
                 FirstScene();
-                my_WasherDoor.GetComponent<BoxCollider>().enabled = true;
+                WasherDoor.GetComponent<BoxCollider>().enabled = true;
                 Debug.Log("퀴즈모드시작");
-                LocalizedComponent.MainTextNumber++;
+                LocalizedComponent.MainTextNumber++;    // 2
             }
             SceneNumber++;           
-        }
-       
-
+        }       
     }
 
     // 카메라를 목표 지점으로 이동
@@ -56,23 +53,23 @@ public class MainCamera : MonoBehaviour
     public void FirstScene()
     {
         MoveCamera(0);
-        if(SceneNumber !=2)
-            my_Arrow.SetActive(true);
+        if (SceneNumber != 2)
+            WasherDoorArrow.SetActive(true);
     }
     //  2번 카메라로 이동
-    public  void SecondScene(int i)
+    public void MoveCameraSup(int i)
     {
-        MoveCamera(i);
+        if (i == 1)
+            MoveCamera(i);
+        else if (i == 2)
+            MoveCamera(i);
+        else if (i == 3)
+            MoveCamera(i);
     }
     //  3번 카메라로 이동
-    public void ThirdScene(int i)
+   /* public void ThirdScene(int i)
     {
         MoveCamera(i);
-    }
-    private void Awake()
-    {
-        Change = () => { SecondScene(1); };
-        Change1 = () => { ThirdScene(2); };
-        FChange = () => { MoveCamera(3); };
-    }
+    }*/
+   
 }

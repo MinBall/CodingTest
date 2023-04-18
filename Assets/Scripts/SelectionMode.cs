@@ -30,7 +30,7 @@ public class SelectionMode : MonoBehaviour
         // 세탁기 패널 클릭 강조 부분
         if (WasherDoorClick.CheckNumber == 7)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
             {
                 CameraChangePanel.GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[0].SetActive(true);
@@ -40,7 +40,7 @@ public class SelectionMode : MonoBehaviour
         // 메인 패널 카메라 앞에 띄우고 다이얼 강조 부분
         if (WasherDoorClick.CheckNumber == 9)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
             {
                 Dial.GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[1].SetActive(true);
@@ -51,7 +51,7 @@ public class SelectionMode : MonoBehaviour
         // 물높이 버튼 강조 부분
         if(WasherDoorClick.CheckNumber == 11)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
             {
                 PanelButtons[0].GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[2].SetActive(true);
@@ -62,7 +62,7 @@ public class SelectionMode : MonoBehaviour
         // 시작 버튼 강조 부분
         if (WasherDoorClick.CheckNumber == 13)
         {
-            if (VideoPlay.ReNum == 0)
+            if (VideoPlayManager.ReNum == 0)
             {
                 PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[0];
                 DialArrow[3].SetActive(true);
@@ -76,7 +76,7 @@ public class SelectionMode : MonoBehaviour
             LocalizedComponent.MainTextNumber = 10;    // 10
             PanelButtons[1].GetComponent<SpriteRenderer>().material = mat[2];
             //DialClick.DialReset();
-            MainCamera.FChange();   // 메인카메라로 이동
+            CameraMoveComponent.ChangeCamera(CameraMoveComponent.CameraSceneChangeNumber = 3);   // 메인카메라로 이동
             MainPanelOff();
             WasherDoorClick.CheckNumber =16;
         }

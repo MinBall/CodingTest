@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using System.Runtime.InteropServices;
 
-public class VideoPlay : MonoBehaviour
+public class VideoPlayManager : MonoBehaviour
 {
     public GameObject Phone;
     public VideoPlayer video;
@@ -55,15 +55,18 @@ public class VideoPlay : MonoBehaviour
     {      
         yield return new WaitForSeconds(3);
         MessageToJS();
+        video.Pause();
     }
 
     void ResetNumber()
     {
+        video.Stop();
         WasherDoorClick.CheckNumber = 0;
         PhoneAimator.SetTrigger("Idle");
         LocalizedComponent.MainTextNumber = 1;
         ReNum++;
-        MainCamera.SceneNumber = 2;
+        CameraMoveComponent.SceneNumber = 2;
+        
     }
 
     void VideoPlayer()

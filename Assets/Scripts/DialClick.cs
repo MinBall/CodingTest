@@ -32,9 +32,8 @@ public class DialClick : MonoBehaviour
 
     void DReset()
     {
-        if (VideoPlay.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
+        if (VideoPlayManager.ReNum == 1 && WasherDoorClick.CheckNumber == 0)
         {
-            Debug.Log("다이얼 초기화 부분입니다.");
             DialAimator.SetTrigger("Idle");
         }
     }
