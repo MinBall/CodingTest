@@ -21,6 +21,8 @@ public class VideoPlayManager : MonoBehaviour
         #if !UNITY_EDITOR && UNITY_WEBGL
          WebGLInput.captureAllKeyboardInput = false;
         #endif
+        //video = GetComponent<VideoPlayer>();
+        video.url = System.IO.Path.Combine(Application.streamingAssetsPath, "SampleClip.mp4");
     }
     void Update()
     {
