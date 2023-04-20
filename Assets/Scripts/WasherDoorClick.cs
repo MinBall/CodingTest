@@ -13,11 +13,9 @@ public class WasherDoorClick : MonoBehaviour
     public Animator LaundryAnimator;
     public Material[] mat = new Material[2];
     public static int CheckNumber = 0;
-    public static Action delayPlus;
     private void Awake()
     {
-        WasherDoor.GetComponent<BoxCollider>().enabled = false;
-        delayPlus = () => { DelayPlus(); };        
+        WasherDoor.GetComponent<BoxCollider>().enabled = false;       
     }
     void Update()
     {
@@ -49,8 +47,8 @@ public class WasherDoorClick : MonoBehaviour
             DoorAnimator.SetBool("DoorOpen", true);
             Invoke("LaundryAnimation", 0.4f);
             LaundryAnimator.ResetTrigger("Idle");
-            Invoke("CloseDoor", 1);            
-            DelayPlus();
+            Invoke("CloseDoor", 1);
+            Invoke("MainTextNumberPlus", 1.5f);
         }
 
         WasherDoorArrow.SetActive(false);
@@ -68,15 +66,12 @@ public class WasherDoorClick : MonoBehaviour
         DoorAnimator.SetBool("CloseDoor", true);        
     }
 
-    public void Plus()
+    void MainTextNumberPlus()
     {
-        LocalizedComponent.MainTextNumber++; // 3
+        LocalizedComponent.MainTextNumber = 3; // 3
     }
 
-    public void DelayPlus()
-    {
-        Invoke("Plus", 1.5f);
-    }
+   
 
    
 

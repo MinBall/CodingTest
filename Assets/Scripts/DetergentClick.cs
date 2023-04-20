@@ -26,10 +26,16 @@ public class DetergentClick : MonoBehaviour
             {
                 Invoke("DeterStart", 0.5f) ;
             }
+            else if(VideoPlayManager.ReNum == 1)
+                Detergent[0].GetComponent<BoxCollider>().enabled = true;
 
-            Detergent[0].GetComponent<BoxCollider>().enabled = true;
             WasherDoorClick.CheckNumber=4;  // 4 
-                
+
+            if(WasherDoorClick.CheckNumber >= 4)
+            {
+                Detergent[0].GetComponent<MeshRenderer>().material = mat[1];
+                Detergent[1].GetComponent<MeshRenderer>().material = mat[2];
+            }
         }
     }
 
@@ -42,7 +48,7 @@ public class DetergentClick : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (WasherDoorClick.CheckNumber == 4)
+            if (WasherDoorClick.CheckNumber >= 4)
             {
                 
                 Detergent[0].GetComponent<MeshRenderer>().material = mat[1];
@@ -61,6 +67,7 @@ public class DetergentClick : MonoBehaviour
         Detergent_Arrow.SetActive(true);
         Detergent[0].GetComponent<MeshRenderer>().material = mat[0];
         Detergent[1].GetComponent<MeshRenderer>().material = mat[0];
+        Detergent[0].GetComponent<BoxCollider>().enabled = true;
     }
 
     //  파티클 재생부분

@@ -17,7 +17,6 @@ public class DetergentInsertClick : MonoBehaviour
         Detergent_Insert.GetComponent<BoxCollider>().enabled = false;
     }
 
-
     void Update()
     {
         if(WasherDoorClick.CheckNumber == 0)
@@ -34,6 +33,7 @@ public class DetergentInsertClick : MonoBehaviour
         }
         if (WasherDoorClick.CheckNumber == 5)
         {
+            DGColliderOn();
             if (VideoPlayManager.ReNum == 0)
             {
                 Detergent_Insert_Arrow.SetActive(true);
@@ -56,17 +56,19 @@ public class DetergentInsertClick : MonoBehaviour
             //  技力烹 凯覆
             if (WasherDoorClick.CheckNumber == 2)
             {
+                Detergent_Insert.GetComponent<BoxCollider>().enabled = false;
                 Detergent_Insert_Arrow.SetActive(false);
                 CameraMoveComponent.ChangeCamera(CameraMoveComponent.CameraSceneChangeNumber = 1);
                 Detergent_Insertparts[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
                 Invoke("Plus", 1);  // 3
                 //WasherDoorClick.CheckNumber=3;   // 3
-                WasherDoorClick.delayPlus();    //LocalizedComponent.MainTextNumber = 4
+                Invoke("MainTextNumberPlus", 1.5f);    //LocalizedComponent.MainTextNumber = 4
             }
             // 技力烹 摧塞
             if (WasherDoorClick.CheckNumber == 6)
             {
+                Detergent_Insert.GetComponent<BoxCollider>().enabled = false;
                 Detergent_Insert_Animator.SetTrigger("DetergentClose");
                 Detergent_Insert_Arrow.SetActive(false);
                 for (int i = 0; i < 6; i++)
@@ -99,6 +101,10 @@ public class DetergentInsertClick : MonoBehaviour
 
     void Plus()
     {
-        WasherDoorClick.CheckNumber++;  // 3
+        WasherDoorClick.CheckNumber = 3;  // 3
+    }
+    void MainTextNumberPlus()
+    {
+        LocalizedComponent.MainTextNumber = 4; // 4
     }
 }
