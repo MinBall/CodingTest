@@ -60,7 +60,8 @@ public class DetergentInsertClick : MonoBehaviour
                 CameraMoveComponent.ChangeCamera(CameraMoveComponent.CameraSceneChangeNumber = 1);
                 Detergent_Insertparts[0].GetComponent<MeshRenderer>().material = mat[1];
                 Invoke("DetOpen", 1);
-                WasherDoorClick.CheckNumber=3;   // 3
+                Invoke("Plus", 1);  // 3
+                //WasherDoorClick.CheckNumber=3;   // 3
                 WasherDoorClick.delayPlus();    //LocalizedComponent.MainTextNumber = 4
             }
             // ¼¼Á¦Åë ´ÝÈû
@@ -98,6 +99,6 @@ public class DetergentInsertClick : MonoBehaviour
 
     void Plus()
     {
-        WasherDoorClick.CheckNumber=6;  // 6
+        WasherDoorClick.CheckNumber++;  // 3
     }
 }

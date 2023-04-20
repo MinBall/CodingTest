@@ -22,8 +22,11 @@ public class DetergentClick : MonoBehaviour
         // SceneNumber !== 2;
         if (WasherDoorClick.CheckNumber == 3)
         {
-            if(VideoPlayManager.ReNum == 0)
-                Invoke("DeterStart", 1.5f);
+            if (VideoPlayManager.ReNum == 0)
+            { 
+                //Invoke("DeterStart", 1.5f);
+                DeterStart();
+            }
 
             Detergent[0].GetComponent<BoxCollider>().enabled = true;
             WasherDoorClick.CheckNumber=4;  // 4 
