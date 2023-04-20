@@ -30,7 +30,12 @@ public class DetergentClick : MonoBehaviour
                 Detergent[0].GetComponent<BoxCollider>().enabled = true;
 
             WasherDoorClick.CheckNumber=4;  // 4 
-                
+
+            if(WasherDoorClick.CheckNumber >= 4)
+            {
+                Detergent[0].GetComponent<MeshRenderer>().material = mat[1];
+                Detergent[1].GetComponent<MeshRenderer>().material = mat[2];
+            }
         }
     }
 
@@ -43,7 +48,7 @@ public class DetergentClick : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (WasherDoorClick.CheckNumber == 4)
+            if (WasherDoorClick.CheckNumber >= 4)
             {
                 
                 Detergent[0].GetComponent<MeshRenderer>().material = mat[1];

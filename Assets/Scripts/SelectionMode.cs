@@ -30,6 +30,7 @@ public class SelectionMode : MonoBehaviour
         // 세탁기 패널 클릭 강조 부분
         if (WasherDoorClick.CheckNumber == 7)
         {
+            CameraChangePanel.GetComponent<BoxCollider2D>().enabled = true;
             if (VideoPlayManager.ReNum == 0)
             {
                 CameraChangePanel.GetComponent<SpriteRenderer>().material = mat[0];
