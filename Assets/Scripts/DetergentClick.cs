@@ -23,8 +23,8 @@ public class DetergentClick : MonoBehaviour
         if (WasherDoorClick.CheckNumber == 3)
         {
             if (VideoPlayManager.ReNum == 0)
-            {                 
-                DeterStart();
+            {
+                Invoke("DeterStart", 0.5f) ;
             }
 
             Detergent[0].GetComponent<BoxCollider>().enabled = true;
