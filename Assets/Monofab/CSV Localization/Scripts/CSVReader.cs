@@ -34,10 +34,8 @@ public class CSVReader
             for (var j = 0; j < header.Length && j < values.Length; j++)
             {
                 string value = values[j];
+                value = value.Replace("\\n", System.Environment.NewLine);
                 value = value.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "");
-
-                value = value.Replace("<br>", "\n");
-
                 object finalvalue = value;
                 int n;
                 float f;
@@ -80,5 +78,11 @@ public class CSVObject
         return null;
     }
 
+
+    public void Test()
+    {
+
+        
+    }
 }
 

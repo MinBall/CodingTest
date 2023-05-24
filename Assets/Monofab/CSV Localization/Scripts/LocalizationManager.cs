@@ -14,8 +14,7 @@ public class LocalizationManager : MonoBehaviour
     UnityEvent onLanguageChanged;
     int languageIndex = 0;
     public static LocalizationManager Instance;
-    public static Action DropdownPlay;
-
+    public static Action Dropdown;
     private void Awake()
     {
         if (Instance == null)
@@ -34,7 +33,7 @@ public class LocalizationManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DropdownPlay = () => { SwitchCurrentLocalizationData(); };
+        Dropdown = () => { SwitchCurrentLocalizationData(); };
     }
 
     private void UpdateLanguageFromSystem()
@@ -89,13 +88,12 @@ public class LocalizationManager : MonoBehaviour
     /// <summary>
     /// change current language to next language in list
     /// </summary>
-    //[Obsolete]
+    //s[Obsolete]
     public void SwitchCurrentLocalizationData()
     {
-        //languageIndex = (languageIndex + 1) % languages.Length;
-        languageIndex = LocalizationDropdown.options.value;
+        //languageIndex = (languageIndex + 1) % languages.Length;        
         currentLanguage = languages[languageIndex];
-        onLanguageChanged.Invoke();        
+        onLanguageChanged.Invoke();
     }
 
     public void SwitchCurrentLocalizationData (SystemLanguage targetLanguage)
@@ -118,7 +116,7 @@ public class LocalizationManager : MonoBehaviour
 
     public string GetTextFromCodeAndColumnName(string code, string defaultString = "", string columnName = "CONTENT")
     {
-        return GetCurrentLocalizationData().GetValueByCode(code, defaultString, columnName);
+        return GetCurrentLocalizationData().GetValueByCode(code, defaultString, columnName);  
     }
 
 
