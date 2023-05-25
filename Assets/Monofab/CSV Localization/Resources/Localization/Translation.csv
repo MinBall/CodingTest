@@ -7,8 +7,19 @@ MainText005, 설비 온도 30도 미만 확인., Close the automatic detergent d
 MainText006, 입고 처리 전 확인 사항을 종료합니다., Set the washing mode., Allitsa be a mosasi modot., Встанов?ть режим прання.
 MainText007, Magazine 입고 시작., Set the water level., Allitsa be a vizszintet., Встанов?ть р?вень води.
 MainText008, Magazine 실은 전동대차를 이송합니다., Press the start/pause button to start the washing., Nyomja meg a start/szunet gombot a mosashoz.," Натисн?ть кнопку старт/пауза, щоб роз"
-MainText009, 세탁이 시작 되었습니다., The washing has started., Elkezd?dott a mosas., Почалося прання.
-MainText010, 세탁이 완료 되기까지 시간을 보냅니다., Wait for the washing to complete., Varja meg," amig befejez?dik a mosas., Зачекайте, поки завершиться прання."
+MainText009, 바코드 스캐너로 Magazine에 부착된 바코드 스캔., The washing has started., Elkezd?dott a mosas., Почалося прання.
+MainText010, 바코드 숫자 확인., Wait for the washing to complete., Varja meg," amig befejez?dik a mosas., Зачекайте, поки завершиться прання."
+MainText011, Magazine 입고 완료.
+MainText012, Magazine 처리 시작
+MainText013, VD 문 개방
+MainText014, VD 안으로 Magazine 옮김
+MainText015, VD 문 닫기
+MainText016, HMI 도어센서 인식
+MainText017, 도어 클램프 실린더 잠김 버튼 누름
+MainText018, 운전 준비 버튼 누름
+MainText019, 자동 버튼 누름
+MainText020, '운전 중' 표시 확인
+MainText021, Magazine 처리 완료
 ,,,,
 UI001, 야간 모드, Night mode, Ejszakai mod, Н?чний режим
 UI002, 표준 모드, Standard mode, Normal mod, Стандартний режим
