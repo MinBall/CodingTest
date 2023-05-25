@@ -768,7 +768,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: ChangeMainText
-    data: MainText027
+    data: MainText028
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
