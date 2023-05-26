@@ -29,6 +29,17 @@ MainText027, 진공상태 풀림 램프 확인.
 MainText028, 도어 클램프 실린더 풀림 버튼 누름.
 MainText029, VD 문 개방.
 MainText030, 비상 정지 안내 종료.
+MainText031, 제품 샘플 검사 안내를 시작합니다.
+MainText032, '조립' 클릭.
+MainText033, '공정관리' 클릭.
+MainText034, 'Vacuum 공정관리' 클릭.
+MainText035, '반제품 검사' 클릭.
+MainText036, 샘플 검사 완료.
+MainText037, 제품 품질 검사 안내를 시작합니다.
+MainText038, 마이크로미터로 샘플 전극 상중하 3포인트 두께 측정.
+MainText039, 측적값 기입.
+MainText040, 품질 검사 완료.
+MainText041, 콘텐츠를 종료합니다.\n(대충 화면 어두워지고 종료)
 ,,,,
 UI001, 야간 모드, Night mode, Ejszakai mod, Н?чний режим
 UI002, 표준 모드, Standard mode, Normal mod, Стандартний режим
