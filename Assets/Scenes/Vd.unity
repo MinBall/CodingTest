@@ -7892,7 +7892,7 @@ GameObject:
   - component: {fileID: 3469287838324428863}
   - component: {fileID: 1711813854263633141}
   m_Layer: 0
-  m_Name: "\uD398\uAE30\uBB3C"
+  m_Name: Waste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
