@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,7 @@ public class StepController : MonoBehaviour
     public LocalizedTMPComponent localizedTMPComponent;
     public Camera mainCamera;
     public Camera uiCamera;
+    public TextMeshProUGUI TempText;
     public LayerMask guideLayer;
 
   public void ChangeMainText(string code)
@@ -30,5 +33,28 @@ public class StepController : MonoBehaviour
     {
         [DllImport("__Internal")]
         public static extern void TestFinish();
+    }
+
+    public void Temp()
+    {
+        StartCoroutine(Count());
+    }
+
+    IEnumerator Count()
+    {
+        float target = 27f;
+        float current = 30.6f;
+        float duration = 1.5f; // 카운팅에 걸리는 시간 설정. 
+        float offset = (29f - 30.6f) / duration;
+
+        while (current > target)
+        {
+            current += offset * Time.deltaTime;
+            TempText.text = ((int)current).ToString() + "°C";
+            yield return null;
+        }
+
+        current = target;
+        TempText.text = ((int)current).ToString()+ "°C";
     }
 }
