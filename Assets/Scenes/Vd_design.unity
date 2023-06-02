@@ -5575,7 +5575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df16d6a20e0fa694d87ffc574364dda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df16d6a20e0fa694d87ffc574364dda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7728,7 +7728,6 @@ MonoBehaviour:
   animator: {fileID: 2104124294}
   localizedTMPComponent: {fileID: 414812965}
   mainCamera: {fileID: 585834310}
-  uiCamera: {fileID: 1260655345}
   TempText: {fileID: 0}
   guideLayer:
     serializedVersion: 2
