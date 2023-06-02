@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +14,7 @@ public class StepController : MonoBehaviour
     public Camera uiCamera;
     public TextMeshProUGUI TempText;
     public LayerMask guideLayer;
+    public GameObject[] GuideBtn;
 
   public void ChangeMainText(string code)
     {
@@ -23,7 +24,9 @@ public class StepController : MonoBehaviour
     {
         mainCamera.cullingMask = mainCamera.cullingMask ^ guideLayer;
         uiCamera.cullingMask = uiCamera.cullingMask ^ guideLayer;
-        animator.SetInteger("PlayCount", animator.GetInteger("PlayCount") + 1);        
+        animator.SetInteger("PlayCount", animator.GetInteger("PlayCount") + 1);
+        for(int i = 0; i<GuideBtn.Length; i++)
+            GuideBtn[i].SetActive(false);
         if (animator.GetInteger("PlayCount") >= 2)
         {
             Native.TestFinish();
@@ -34,7 +37,7 @@ public class StepController : MonoBehaviour
         [DllImport("__Internal")]
         public static extern void TestFinish();
     }
-
+    
     public void Temp()
     {
         StartCoroutine(Count());
