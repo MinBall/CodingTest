@@ -11,7 +11,7 @@ public class StepController : MonoBehaviour
     public Animator animator;
     public LocalizedTMPComponent localizedTMPComponent;
     public Camera mainCamera;
-    public Camera uiCamera;
+    //public Camera uiCamera;
     public TextMeshProUGUI TempText;
     public LayerMask guideLayer;
     public GameObject[] GuideBtn;
@@ -23,7 +23,7 @@ public class StepController : MonoBehaviour
     public void TurnOffGuide()
     {
         mainCamera.cullingMask = mainCamera.cullingMask ^ guideLayer;
-        uiCamera.cullingMask = uiCamera.cullingMask ^ guideLayer;
+        //uiCamera.cullingMask = uiCamera.cullingMask ^ guideLayer;
         animator.SetInteger("PlayCount", animator.GetInteger("PlayCount") + 1);
         for(int i = 0; i<GuideBtn.Length; i++)
             GuideBtn[i].SetActive(false);
