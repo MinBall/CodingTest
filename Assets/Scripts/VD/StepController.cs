@@ -29,7 +29,7 @@ public class StepController : MonoBehaviour
         for(int i = 0; i<GuideBtn.Length; i++)
             GuideBtn[i].SetActive(false);
 
-        TempText.text = "30.6" + "¡ÆC";
+        TempText.text = "32.6" + "¡ÆC";
 
         if (animator.GetInteger("PlayCount") >= 2)
         {
