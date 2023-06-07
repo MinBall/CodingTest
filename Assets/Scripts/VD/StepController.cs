@@ -27,6 +27,7 @@ public class StepController : MonoBehaviour
         animator.SetInteger("PlayCount", animator.GetInteger("PlayCount") + 1);
         for(int i = 0; i<GuideBtn.Length; i++)
             GuideBtn[i].SetActive(false);
+        TempText.text = "30.6" + "°C";
         if (animator.GetInteger("PlayCount") >= 2)
         {
             Native.TestFinish();
@@ -46,12 +47,20 @@ public class StepController : MonoBehaviour
     IEnumerator Count()
     {
         float target = 27f;
-        float current = 30.6f;
-        float duration = 1.5f; // 카운팅에 걸리는 시간 설정. 
-        float offset = (29f - 30.6f) / duration;
+        float current = 32.6f;
+        float duration = 2.5f; // 카운팅에 걸리는 시간 설정. 
+        float offset = (29f - current) / duration;
 
         while (current > target)
         {
+            if(current >30)
+            {
+                TempText.color = Color.red;
+            }
+            else if(current < 30)
+            {
+                TempText.color = Color.black;
+            }
             current += offset * Time.deltaTime;
             TempText.text = ((int)current).ToString() + "°C";
             yield return null;
