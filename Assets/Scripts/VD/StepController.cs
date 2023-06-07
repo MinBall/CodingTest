@@ -25,9 +25,12 @@ public class StepController : MonoBehaviour
         mainCamera.cullingMask = mainCamera.cullingMask ^ guideLayer;
         //uiCamera.cullingMask = uiCamera.cullingMask ^ guideLayer;
         animator.SetInteger("PlayCount", animator.GetInteger("PlayCount") + 1);
+
         for(int i = 0; i<GuideBtn.Length; i++)
             GuideBtn[i].SetActive(false);
+
         TempText.text = "30.6" + "¡ÆC";
+
         if (animator.GetInteger("PlayCount") >= 2)
         {
             Native.TestFinish();
