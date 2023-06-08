@@ -28104,7 +28104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tim Cook: I love SAMSUNG'
+  m_text: Whyrano.. Whyrano..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bea044aee08988478fe54b5aa7fd0ac, type: 2}
   m_sharedMaterial: {fileID: 2412532826071996887, guid: 2bea044aee08988478fe54b5aa7fd0ac, type: 2}
@@ -28137,7 +28137,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 3
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -40805,7 +40805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585834308}
   m_LocalRotation: {x: 0.20199254, y: 0, z: 0, w: 0.97938704}
-  m_LocalPosition: {x: 7.1, y: 14.074, z: -30.77}
+  m_LocalPosition: {x: 4.91, y: 17.57, z: -36.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72254,8 +72254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114099499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.837, y: 1.21, z: 1.17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -24.837, y: 1.51, z: -5.03}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1954367036}
