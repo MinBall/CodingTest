@@ -30,6 +30,7 @@ public class StepController : MonoBehaviour
             GuideBtn[i].SetActive(false);
 
         TempText.text = "32.6" + "¡ÆC";
+        TempText.color = Color.red;
 
         if (animator.GetInteger("PlayCount") >= 2)
         {

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Step02
+  m_Name: Step05
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -333,7 +333,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: ChangeMainText
-    data: MainText002
+    data: MainText005
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
