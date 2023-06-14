@@ -8302,7 +8302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Font : Pretendard-Regular'
+  m_text: Whyrano,,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bea044aee08988478fe54b5aa7fd0ac, type: 2}
   m_sharedMaterial: {fileID: 2412532826071996887, guid: 2bea044aee08988478fe54b5aa7fd0ac, type: 2}
