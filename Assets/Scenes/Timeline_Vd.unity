@@ -10822,14 +10822,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585834308}
-  m_LocalRotation: {x: 0.1369593, y: -0, z: -0, w: 0.9905767}
+  m_LocalRotation: {x: 0.1369593, y: 0, z: 0, w: 0.9905767}
   m_LocalPosition: {x: 1.929, y: 7.826, z: -39.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371053493}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15.744, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599733910
 GameObject:
   m_ObjectHideFlags: 0
@@ -33596,6 +33596,8 @@ GameObject:
   - component: {fileID: 2104124293}
   - component: {fileID: 2104124295}
   - component: {fileID: 2104124294}
+  - component: {fileID: 2104124297}
+  - component: {fileID: 2104124296}
   m_Layer: 0
   m_Name: Reeeee Root
   m_TagString: Untagged
@@ -33664,6 +33666,55 @@ MonoBehaviour:
   - {fileID: 1145727653}
   - {fileID: 254356411}
   - {fileID: 185934842}
+--- !u!114 &2104124296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104124292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 401b24fe11b96e643bd4410824a54f27, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2104124295}
+          m_TargetAssemblyTypeName: StepController, Assembly-CSharp
+          m_MethodName: ChangeMainText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MainText001
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!320 &2104124297
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104124292}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 97bdd550da0b93a4ead44573b4f66c38, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3212867378057722525, guid: 97bdd550da0b93a4ead44573b4f66c38, type: 2}
+    value: {fileID: 2104124294}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &2105590603
 GameObject:
   m_ObjectHideFlags: 0
