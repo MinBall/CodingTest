@@ -4,11 +4,13 @@ using System.Runtime.InteropServices;
 using TMPro;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class StepController : MonoBehaviour
 {
     public Animator animator;
+    public PlayableDirector playableDirector;
     public LocalizedTMPComponent localizedTMPComponent;
     public Camera mainCamera;
     //public Camera uiCamera;
@@ -72,5 +74,14 @@ public class StepController : MonoBehaviour
 
         current = target;
         TempText.text = ((int)current).ToString()+ "¡ÆC";
+    }
+
+    public void TimelinePlay()
+    {
+        playableDirector.Play();
+    }
+    public void TimelinePause()
+    {
+        playableDirector.Pause();
     }
 }
