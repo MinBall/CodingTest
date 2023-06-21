@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 8.116666666666667
+  m_Time: 7.5
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 401b24fe11b96e643bd4410824a54f27, type: 2}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.6166666666666667
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1891887440599765136}
     m_Duration: 7.5
@@ -193,10 +193,10 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0.6166666666666667
+    m_PreExtrapolationTime: 0
     m_DisplayName: Step01
   - m_Version: 1
-    m_Start: 8.116666666666667
+    m_Start: 7.5
     m_ClipIn: 0
     m_Asset: {fileID: 776192970731338094}
     m_Duration: 5
