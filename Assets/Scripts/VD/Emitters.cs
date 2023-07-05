@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
-public class TimeSpeed : MonoBehaviour
+public class Emitters : MonoBehaviour
 {
     public PlayableDirector timeline;
     public SignalReceiver receiver;
